@@ -13,10 +13,6 @@ class App extends Component {
     };
   }
 
-  handleClick(message) {
-    console.log("work!", message);
-  }
-
   render() {
     if (this.state.errorMessage && !this.state.latitude) {
       return (
