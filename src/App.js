@@ -1,25 +1,68 @@
-import logo from './logo.svg';
-import './App.css';
+import { Component } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+import SeasonDisplay from "./SeasonDisplay";
+import Loader from "./Loader";
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      latitude: null,
+      errorMessage: "",
+    };
+  }
+
+  handleClick(message) {
+    console.log("work!", message);
+  }
+
+  render() {
+    if (this.state.errorMessage && !this.state.latitude) {
+      return (
+        <div
+          style={{
+            color: "red",
+            background: "black",
+            fontSize: "100px",
+            textAlign: "center",
+            marginTop: "100px",
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+          Error: {this.state.errorMessage}
+        </div>
+      );
+    }
+
+    if (!this.state.errorMessage && this.state.latitude) {
+      return <SeasonDisplay lat={this.state.latitude} />;
+    }
+
+    return <Loader />;
+  }
+
+  componentDidMount() {
+    window.navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const { coords } = position;
+
+        // console.log(coords);
+
+        this.setState({
+          latitude: coords.latitude,
+        });
+      },
+      (err) => {
+        this.setState({
+          errorMessage: err.message,
+        });
+      }
+    );
+  }
+
+  componentDidUpdate() {}
+
+  componentWillUnmount() {}
 }
 
 export default App;
