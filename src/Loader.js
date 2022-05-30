@@ -16,7 +16,7 @@ class Loader extends Component {
           textAlign: "center",
         }}
       >
-        <img src={loaderImg} />
+        <img src={loaderImg} alt="my_loader" />
         <br />
 
         {this.props.text}
