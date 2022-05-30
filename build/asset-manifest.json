@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.js": "/static/js/main.30f1b040.js",
+    "static/media/loader.gif": "/static/media/loader.1eb3cc7514dcae305810.gif",
+    "static/media/snowflake-solid.svg": "/static/media/snowflake-solid.49503839987ee4434cf0f7e7ecce7052.svg",
+    "static/media/sun-solid.svg": "/static/media/sun-solid.4f202eaec73ceeb5c2612e3fd0bcc567.svg",
+    "index.html": "/index.html",
+    "main.30f1b040.js.map": "/static/js/main.30f1b040.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.30f1b040.js"
+  ]
+}
