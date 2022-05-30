@@ -22,6 +22,7 @@ class SeasonDisplay extends Component {
         <img
           style={{ position: "absolute", top: 100, left: 70, width: "200px" }}
           src={this.state.season === "winter" ? snowImg : sunImg}
+          alt="season-image-1"
         />
 
         {this.state.season === "winter"
@@ -36,6 +37,7 @@ class SeasonDisplay extends Component {
             width: "200px",
           }}
           src={this.state.season === "winter" ? snowImg : sunImg}
+          alt="season-image-2"
         />
       </div>
     );
